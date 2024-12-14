@@ -1,36 +1,35 @@
 package com.csc;
 
-public class NodeTree {
+public class NodeTree<T> {
 
-    private String name;
-    private NodeTree left;  // Reference to the left child
-    private NodeTree right; // Reference to the right child
+  private T data;
+  private NodeTree<T> left;  // Reference to the left child
+  private NodeTree<T> right; // Reference to the right child
 
-
-      NodeTree(Squirrel squirrel)
-      {
-             this.name = squirrel.getName();
-             this.left = null;
-             this.right = null;
-      }  
-      public void setleft (NodeTree nodeTree)
+  NodeTree(T data) {
+    this.data = data;
+    this.left = null;
+    this.right = null;
+   }
+  
+      public void setLeft (NodeTree<T> nodeTree)
       {
         this.left = nodeTree;
       }
-      public void setright (NodeTree nodeTree)
+      public void setRight (NodeTree<T> nodeTree)
       {
         this.right = nodeTree;
       }
-      public NodeTree getleft()
+      public NodeTree<T> getLeft()
       {
         return this.left;
       }
-      public NodeTree getright()
+      public NodeTree<T> getRight()
       {
         return this.right;
       }
-      public String getName() {
-        return this.name;
+      public T getData() {
+        return this.data;
       }
 } 
 
